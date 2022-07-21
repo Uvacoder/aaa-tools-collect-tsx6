@@ -25,12 +25,6 @@ export const useStyles = createStyles((theme) => ({
     },
   },
 
-  logoWrapper: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
   logo: {
     fill: theme.colors.red[9],
     height: 34,

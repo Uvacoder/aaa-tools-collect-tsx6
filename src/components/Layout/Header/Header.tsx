@@ -32,7 +32,7 @@ export const Header = () => {
             size='sm'
             className={classes.burger}
           />
-          <Logo />
+          <Logo onClick={() => opened && toggleOpened(false)} />
         </Group>
 
         <Group spacing={5}>
