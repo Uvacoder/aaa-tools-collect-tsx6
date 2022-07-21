@@ -64,9 +64,9 @@ yarn
 
 ## 🛳️ Roadmap
 
-- [] Multi-language Support
-  - [] Chinese
-  - [] English
+- [ ] Multi-language Support
+  - [ ] Chinese
+  - [ ] English
 
 ## 🍰 Contributing
 
