@@ -14,7 +14,7 @@
     <a href="https://github.com/tszhong0411/tools.honghong.me/issues/new/choose">Request Feature</a>
 </p>
 
-## 🌍 honghong.me
+## 🌍 tools.honghong.me
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Deployment**: [Vercel](https://vercel.com)
@@ -36,11 +36,9 @@
 
 ## 🤩 Features
 
-- Blog
-- Projects
-- About
-- Guestbook
-- i18n
+- CSS Units converter
+- Color converter
+- Source code viewer
 
 ## 👋 Getting Started
 
@@ -55,7 +53,7 @@ git clone https://github.com/tszhong0411/tools.honghong.me.git
 2. Change directories
 
 ```sh
-cd honghong.me
+cd tools.honghong.me
 ```
 
 3. Install yarn Packages
