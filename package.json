@@ -1,24 +1,167 @@
 {
-  "name": "tool",
-  "version": "0.1.0",
+  "name": "tools.honghong.me",
   "private": true,
+  "description": "Some tools for web developer",
+  "author": "小康 <info@honghong.me>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tszhong0411/tools.honghong.me.honghong.me"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && yarn format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "commit": "gitmoji -c",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "type-check": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@codesandbox/sandpack-react": "^1.3.0",
+    "@mantine/core": "^4.2.12",
+    "@mantine/dates": "^4.2.12",
+    "@mantine/dropzone": "^4.2.12",
+    "@mantine/form": "^4.2.12",
+    "@mantine/hooks": "^4.2.12",
+    "@mantine/modals": "^4.2.12",
+    "@mantine/next": "^4.2.12",
+    "@mantine/notifications": "^4.2.12",
+    "@mantine/prism": "^4.2.12",
+    "@mantine/rte": "^4.2.12",
+    "@mantine/spotlight": "^4.2.12",
+    "axios": "^0.27.2",
+    "colord": "^2.9.2",
+    "cookies-next": "^2.1.1",
+    "dayjs": "^1.11.4",
+    "js-beautify": "^1.14.4",
     "next": "12.2.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "prism-react-renderer": "^1.3.5",
+    "prismjs": "^1.28.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tabler-icons-react": "^1.53.0",
+    "zustand": "4.0.0-rc.3"
   },
   "devDependencies": {
-    "@types/node": "18.0.4",
+    "@types/node": "18.0.6",
+    "@types/prettier": "^2.6.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
-    "eslint": "8.19.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "typescript": "4.7.4"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 2,
+    "semi": false
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "simple-import-sort",
+      "unused-imports"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "next",
+      "next/core-web-vitals",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "no-console": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "react/display-name": "off",
+      "react/jsx-curly-brace-presence": [
+        "warn",
+        {
+          "props": "never",
+          "children": "never"
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "simple-import-sort/exports": "warn",
+      "simple-import-sort/imports": [
+        "warn",
+        {
+          "groups": [
+            [
+              "^@?\\w",
+              "^\\u0000"
+            ],
+            [
+              "^.+\\.s?css$"
+            ],
+            [
+              "^@/lib",
+              "^@/hooks"
+            ],
+            [
+              "^@/data"
+            ],
+            [
+              "^@/components",
+              "^@/container"
+            ],
+            [
+              "^@/"
+            ],
+            [
+              "^\\./?$",
+              "^\\.(?!/?$)",
+              "^\\.\\./?$",
+              "^\\.\\.(?!/?$)",
+              "^\\.\\./\\.\\./?$",
+              "^\\.\\./\\.\\.(?!/?$)",
+              "^\\.\\./\\.\\./\\.\\./?$",
+              "^\\.\\./\\.\\./\\.\\.(?!/?$)"
+            ],
+            [
+              "^@/types"
+            ],
+            [
+              "^"
+            ]
+          ]
+        }
+      ]
+    },
+    "globals": {
+      "React": true,
+      "JSX": true
+    }
   }
 }
