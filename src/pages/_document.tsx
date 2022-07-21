@@ -1,6 +1,7 @@
 import { getSandpackCssText } from '@codesandbox/sandpack-react'
 import { createGetInitialProps } from '@mantine/next'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 const getInitialProps = createGetInitialProps()
 
@@ -24,6 +25,12 @@ export default class _Document extends Document {
           <style
             dangerouslySetInnerHTML={{ __html: getSandpackCssText() }}
             id='sandpack'
+          />
+          <Script
+            async
+            defer
+            data-website-id='6e89024f-bfa9-4d03-805a-7fa9fd24114f'
+            src='https://umami.honghong.me/umami.js'
           />
         </Head>
         <body>
