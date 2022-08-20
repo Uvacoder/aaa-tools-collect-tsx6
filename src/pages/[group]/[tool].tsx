@@ -1,21 +1,21 @@
-import type { NextPage } from 'next'
-import { GetServerSideProps } from 'next'
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+  NextPage,
+} from 'next'
 import dynamic from 'next/dynamic'
-import { useRouter } from 'next/router'
 
-import { SEO } from '@/components/Layout/SEO'
-
-const Tool: NextPage = () => {
-  const router = useRouter()
-  const { group, tool } = router.query
-
+const Tool: NextPage = ({
+  group,
+  tool,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const DynamicTool = dynamic(
     () => import(`@/components/Tools/${group}/${tool}`)
   )
 
   return (
     <>
-      <SEO />
       <DynamicTool />
     </>
   )
@@ -23,18 +23,22 @@ const Tool: NextPage = () => {
 
 export default Tool
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const toolsList: string[] = ['css-units', 'color', 'source-code-viewer']
-
-  if (!toolsList.includes(context?.query?.tool?.toString())) {
-    return {
-      redirect: {
-        destination: '/404',
-        permanent: false,
-      },
-    }
-  }
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    props: {},
+    paths: [
+      { params: { group: 'code', tool: 'source-code-viewer' } },
+      { params: { group: 'converter', tool: 'color' } },
+      { params: { group: 'converter', tool: 'css-units' } },
+    ],
+    fallback: false,
+  }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  return {
+    props: {
+      group: params.group,
+      tool: params.tool,
+    },
   }
 }
