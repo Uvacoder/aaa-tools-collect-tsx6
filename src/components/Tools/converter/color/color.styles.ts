@@ -1,16 +1,6 @@
 import { createStyles } from '@mantine/core'
 
 export const useStyles = createStyles((theme) => ({
-  wrapper: {
-    flexDirection: 'column',
-    margin: '24px 0',
-
-    [theme.fn.largerThan('lg')]: {
-      flexDirection: 'row',
-      alignItems: 'stretch',
-    },
-  },
-
   title: {
     margin: '24px 0 36px 0',
     fontSize: 24,
@@ -18,11 +8,6 @@ export const useStyles = createStyles((theme) => ({
     [theme.fn.largerThan('sm')]: {
       fontSize: 36,
     },
-  },
-
-  child: {
-    maxWidth: 'none',
-    width: '100%',
   },
 
   label: {

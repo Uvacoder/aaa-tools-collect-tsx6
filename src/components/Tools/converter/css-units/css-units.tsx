@@ -1,4 +1,4 @@
-import { Container, Group, NumberInput, Title } from '@mantine/core'
+import { Container, Group, NumberInput, Stack, Title } from '@mantine/core'
 import React from 'react'
 
 import { useStyles } from '@/components/Tools/converter/css-units/css-units.styles'
@@ -95,7 +95,7 @@ export default function CssUnits() {
       <Title order={1} align='center' className={classes.title}>
         CSS Units converter
       </Title>
-      <Group spacing={8} grow direction='column'>
+      <Stack spacing={12}>
         {List.map((item, index) => {
           const decimalPoint = item.state.toString().split('.')
 
@@ -115,7 +115,7 @@ export default function CssUnits() {
             />
           )
         })}
-      </Group>
+      </Stack>
     </Container>
   )
 }
