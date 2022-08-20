@@ -4,30 +4,26 @@ import {
   Global,
   MantineProvider,
 } from '@mantine/core'
-import { useHotkeys } from '@mantine/hooks'
+import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import { SpotlightProvider } from '@mantine/spotlight'
-import { getCookie, setCookies } from 'cookies-next'
+import { IconSearch } from '@tabler/icons'
 import { GetServerSidePropsContext } from 'next'
 import type { AppProps } from 'next/app'
 import React from 'react'
-import { Search } from 'tabler-icons-react'
 
 import { Layout } from '@/components/Layout'
 import { Actions } from '@/components/Layout/Navbar/List'
 
 const MyApp = (props: AppProps & { colorScheme: ColorScheme }) => {
   const { Component, pageProps } = props
-  const [colorScheme, setColorScheme] = React.useState<ColorScheme>(
-    props.colorScheme
-  )
+  const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
+    key: 'mantine-color-scheme',
+    defaultValue: 'light',
+    getInitialValueInEffect: true,
+  })
 
-  const toggleColorScheme = (value?: ColorScheme) => {
-    const nextColorScheme = value || (colorScheme === 'dark' ? 'light' : 'dark')
-    setColorScheme(nextColorScheme)
-    setCookies('mantine-color-scheme', nextColorScheme, {
-      maxAge: 60 * 60 * 24 * 30,
-    })
-  }
+  const toggleColorScheme = (value?: ColorScheme) =>
+    setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'))
 
   useHotkeys([['mod+J', () => toggleColorScheme()]])
 
@@ -55,7 +51,7 @@ const MyApp = (props: AppProps & { colorScheme: ColorScheme }) => {
       >
         <SpotlightProvider
           shortcut={['mod + K', 'mod + P']}
-          searchIcon={<Search size={18} />}
+          searchIcon={<IconSearch size={18} />}
           searchPlaceholder='Search'
           nothingFoundMessage='Not found'
           actions={Actions()}
@@ -97,7 +93,6 @@ const MyApp = (props: AppProps & { colorScheme: ColorScheme }) => {
               '::-webkit-scrollbar-track': {
                 background: '0 0',
               },
-              // https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied
               'input:-webkit-autofill, input:-webkit-autofill:focus': {
                 transition: 'background-color 600000s 0s, color 600000s 0s',
               },
@@ -113,11 +108,3 @@ const MyApp = (props: AppProps & { colorScheme: ColorScheme }) => {
 }
 
 export default MyApp
-
-MyApp.getInitialProps = async ({
-  ctx,
-}: {
-  ctx: GetServerSidePropsContext
-}) => ({
-  colorScheme: getCookie('mantine-color-scheme', ctx) || 'light',
-})
