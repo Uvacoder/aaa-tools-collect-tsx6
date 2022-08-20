@@ -10,7 +10,7 @@ export default class _Document extends Document {
 
   render() {
     return (
-      <Html lang='zh-TW'>
+      <Html lang='en'>
         <Head>
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
