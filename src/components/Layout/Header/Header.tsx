@@ -6,8 +6,8 @@ import {
   Tooltip,
   useMantineColorScheme,
 } from '@mantine/core'
+import { IconBrandGithub, IconMoonStars, IconSun } from '@tabler/icons'
 import React from 'react'
-import { BrandGithub, MoonStars, Sun } from 'tabler-icons-react'
 
 import { useNavbar } from '@/lib/store'
 
@@ -25,7 +25,7 @@ export const Header = () => {
   return (
     <MantineHeader height={56} className={classes.header}>
       <div className={classes.inner}>
-        <Group direction='row'>
+        <Group>
           <Burger
             opened={opened}
             onClick={() => toggleOpened()}
@@ -44,7 +44,7 @@ export const Header = () => {
               className={classes.button}
               onClick={() => toggleColorScheme()}
             >
-              {dark ? <Sun size={18} /> : <MoonStars size={18} />}
+              {dark ? <IconSun size={18} /> : <IconMoonStars size={18} />}
             </Button>
           </Tooltip>
           <Tooltip label='Source code' openDelay={500}>
@@ -56,7 +56,7 @@ export const Header = () => {
               noIcon
               href='https://github.com/tszhong0411/tools.honghong.me'
             >
-              <BrandGithub size={18} />
+              <IconBrandGithub size={18} />
             </Button>
           </Tooltip>
         </Group>

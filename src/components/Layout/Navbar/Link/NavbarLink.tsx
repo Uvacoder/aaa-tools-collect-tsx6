@@ -1,12 +1,12 @@
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from '@mantine/core'
 import React, { useState } from 'react'
-import { ChevronRight } from 'tabler-icons-react'
 
 import { useNavbar } from '@/lib/store'
 
 import { useStyles } from '@/components/Layout/Navbar/Link/NavbarLink.style'
 import { LinksGroupProps } from '@/components/Layout/Navbar/types'
 import Link from '@/components/Link'
+import { IconChevronRight } from '@tabler/icons'
 
 export const LinksGroup = ({
   icon: Icon,
@@ -42,7 +42,7 @@ export const LinksGroup = ({
             </ThemeIcon>
             <Box ml='md'>{label}</Box>
           </Box>
-          <ChevronRight
+          <IconChevronRight
             className={classes.chevron}
             size={14}
             style={{

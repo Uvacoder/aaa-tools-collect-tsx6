@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router'
-import { ArrowsExchange, Code } from 'tabler-icons-react'
 
 import { LinksGroupProps } from '@/components/Layout/Navbar/types'
+import { IconArrowsExchange, IconCode } from '@tabler/icons'
 
 export const List: LinksGroupProps[] = [
   {
     label: 'Converter',
-    icon: ArrowsExchange,
+    icon: IconArrowsExchange,
     links: [
       {
         label: 'CSS Units converter',
@@ -24,7 +24,7 @@ export const List: LinksGroupProps[] = [
   },
   {
     label: 'Code',
-    icon: Code,
+    icon: IconCode,
     links: [
       {
         label: 'Source code viewer',

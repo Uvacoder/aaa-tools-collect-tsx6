@@ -10,6 +10,7 @@ import {
   Group,
   LoadingOverlay,
   Paper,
+  Stack,
   TextInput,
   Title,
   Tooltip,
@@ -17,10 +18,10 @@ import {
 } from '@mantine/core'
 import { useForm } from '@mantine/form'
 import { useClipboard, useMediaQuery } from '@mantine/hooks'
+import { IconCopy, IconLink, IconTextWrap, IconTrashX } from '@tabler/icons'
 import axios from 'axios'
 import * as beautify from 'js-beautify'
 import React from 'react'
-import { Copy, Link, TextWrap, TrashX } from 'tabler-icons-react'
 
 import { isValidUrl } from '@/lib/isValidURL'
 
@@ -68,7 +69,7 @@ export default function SourceCodeViewer() {
         <TextInput
           required
           placeholder='https://honghong.me'
-          icon={<Link size={24} />}
+          icon={<IconLink size={24} />}
           label='URL'
           size={matches ? 'lg' : 'sm'}
           rightSection={
@@ -87,14 +88,7 @@ export default function SourceCodeViewer() {
           {...form.getInputProps('url')}
         />
       </form>
-      <Group
-        position='center'
-        direction='column'
-        spacing={0}
-        my={36}
-        sx={{ position: 'relative' }}
-        grow
-      >
+      <Stack spacing={0} my={36} sx={{ position: 'relative' }}>
         <Paper px={16} py={8} withBorder className={classes.PrismHeader}>
           <Group position='apart'>
             <Group className={classes.PrismHeaderGroup} spacing='sm'>
@@ -110,7 +104,7 @@ export default function SourceCodeViewer() {
                 openDelay={500}
               >
                 <ActionIcon onClick={() => setCode('')}>
-                  <TrashX size={16} />
+                  <IconTrashX size={16} />
                 </ActionIcon>
               </Tooltip>
               <Tooltip
@@ -120,18 +114,18 @@ export default function SourceCodeViewer() {
                 openDelay={500}
               >
                 <ActionIcon onClick={() => setCode(beautify.html(code))}>
-                  <TextWrap size={16} />
+                  <IconTextWrap size={16} />
                 </ActionIcon>
               </Tooltip>
               <Tooltip
                 label={clipboard.copied ? 'Copied' : 'Copy to clipboard'}
                 position='top'
                 transition='fade'
-                color={clipboard.copied ? 'green' : 'gray'}
+                color={clipboard.copied ? 'green' : 'black'}
                 openDelay={500}
               >
                 <ActionIcon onClick={() => clipboard.copy(code)}>
-                  <Copy size={16} />
+                  <IconCopy size={16} />
                 </ActionIcon>
               </Tooltip>
             </Group>
@@ -159,7 +153,7 @@ export default function SourceCodeViewer() {
           </SandpackLayout>
         </SandpackProvider>
         <LoadingOverlay visible={visible} />
-      </Group>
+      </Stack>
     </Container>
   )
 }

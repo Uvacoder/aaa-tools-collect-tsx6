@@ -1,7 +1,7 @@
 import { Group, Text, UnstyledButton } from '@mantine/core'
 import { useOs } from '@mantine/hooks'
 import { useSpotlight } from '@mantine/spotlight'
-import { Search as SearchIcon } from 'tabler-icons-react'
+import { IconSearch } from '@tabler/icons'
 
 export const Search = () => {
   const spotlight = useSpotlight()
@@ -40,7 +40,7 @@ export const Search = () => {
       })}
     >
       <Group spacing='xs'>
-        <SearchIcon size={14} />
+        <IconSearch size={14} />
         <Text size='sm' color='dimmed' pr={80}>
           Search
         </Text>

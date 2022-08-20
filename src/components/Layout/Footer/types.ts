@@ -1,4 +1,4 @@
-import { Icon as TablerIcon } from 'tabler-icons-react'
+import { TablerIcon } from '@tabler/icons'
 
 export type ListType = {
   icon: TablerIcon

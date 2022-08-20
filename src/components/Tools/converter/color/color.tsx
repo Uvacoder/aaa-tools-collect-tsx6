@@ -3,11 +3,12 @@ import {
   ColorInput,
   Container,
   Divider,
-  Group,
+  Grid,
   Paper,
   Text,
   Title,
 } from '@mantine/core'
+import { IconRefresh } from '@tabler/icons'
 import { colord, extend, getFormat, random } from 'colord'
 import a11yPlugin from 'colord/plugins/a11y'
 import cmykPlugin from 'colord/plugins/cmyk'
@@ -15,7 +16,6 @@ import hwbPlugin from 'colord/plugins/hwb'
 import lchPlugin from 'colord/plugins/lch'
 import namesPlugin from 'colord/plugins/names'
 import React from 'react'
-import { Refresh } from 'tabler-icons-react'
 
 import { useStyles } from '@/components/Tools/converter/color/color.styles'
 import { ListType } from '@/components/Tools/converter/color/types'
@@ -99,7 +99,7 @@ export default function Color() {
         className={classes.colorInput}
         rightSection={
           <ActionIcon onClick={() => setValue(random().toHex())}>
-            <Refresh size={16} />
+            <IconRefresh size={16} />
           </ActionIcon>
         }
         swatches={[
@@ -119,51 +119,64 @@ export default function Color() {
           '#fd7e14',
         ]}
       />
-      <Group
-        className={classes.wrapper}
-        classNames={{
-          child: classes.child,
-        }}
-        noWrap
-        grow
-      >
-        <Paper shadow='sm' radius='lg' px='lg' py='xl' mb='lg' withBorder>
-          <Text
-            align='center'
-            size='lg'
-            weight={700}
-            py={24}
-            className={classes.heading}
+      <Grid my={48} grow>
+        <Grid.Col span={12} lg={6}>
+          <Paper
+            sx={{ height: '100%' }}
+            shadow='sm'
+            radius='lg'
+            px='lg'
+            py='xl'
+            mb='lg'
+            withBorder
           >
-            CONVERSION
-          </Text>
-          {ConvertList.map((item, index) => (
-            <React.Fragment key={index}>
-              <Text className={classes.label}>{item.label}</Text>
-              <Text className={classes.value}>{item.value}</Text>
-              <Divider my={12} size='md' />
-            </React.Fragment>
-          ))}
-        </Paper>
-        <Paper shadow='sm' radius='lg' px='lg' py='xl' mb='lg' withBorder>
-          <Text
-            align='center'
-            size='lg'
-            weight={700}
-            py={24}
-            className={classes.heading}
+            <Text
+              align='center'
+              size='lg'
+              weight={700}
+              py={24}
+              className={classes.heading}
+            >
+              CONVERSION
+            </Text>
+            {ConvertList.map((item, index) => (
+              <React.Fragment key={index}>
+                <Text className={classes.label}>{item.label}</Text>
+                <Text className={classes.value}>{item.value}</Text>
+                <Divider my={12} size='md' />
+              </React.Fragment>
+            ))}
+          </Paper>
+        </Grid.Col>
+        <Grid.Col span={12} lg={6}>
+          <Paper
+            sx={{ height: '100%' }}
+            shadow='sm'
+            radius='lg'
+            px='lg'
+            py='xl'
+            mb='lg'
+            withBorder
           >
-            ANALYSIS
-          </Text>
-          {AnalysisList.map((item, index) => (
-            <React.Fragment key={index}>
-              <Text className={classes.label}>{item.label}</Text>
-              <Text className={classes.value}>{item.value}</Text>
-              <Divider my={12} size='md' />
-            </React.Fragment>
-          ))}
-        </Paper>
-      </Group>
+            <Text
+              align='center'
+              size='lg'
+              weight={700}
+              py={24}
+              className={classes.heading}
+            >
+              ANALYSIS
+            </Text>
+            {AnalysisList.map((item, index) => (
+              <React.Fragment key={index}>
+                <Text className={classes.label}>{item.label}</Text>
+                <Text className={classes.value}>{item.value}</Text>
+                <Divider my={12} size='md' />
+              </React.Fragment>
+            ))}
+          </Paper>
+        </Grid.Col>
+      </Grid>
     </Container>
   )
 }

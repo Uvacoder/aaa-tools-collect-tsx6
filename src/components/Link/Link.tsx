@@ -2,11 +2,11 @@
 import { Anchor } from '@mantine/core'
 import Link from 'next/link'
 import React from 'react'
-import { ExternalLink } from 'tabler-icons-react'
 
 import { LinkProps } from '@/components/Link/types'
 
 import useStyles from './Link.styles'
+import { IconExternalLink } from '@tabler/icons'
 
 const CustomLink = ({ href, children, noIcon = false, ...rest }: LinkProps) => {
   const isInternalLink = href && href.startsWith('/')
@@ -33,7 +33,7 @@ const CustomLink = ({ href, children, noIcon = false, ...rest }: LinkProps) => {
       {children}
       {!noIcon && (
         <span>
-          <ExternalLink size={18} className={classes.externalLink} />
+          <IconExternalLink size={18} className={classes.externalLink} />
         </span>
       )}
     </Anchor>
