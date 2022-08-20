@@ -11,7 +11,7 @@ export const Footer = () => {
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
-        <Text weight='bold'>&copy; {new Date().getFullYear()} 小康</Text>
+        <Text>&copy; {new Date().getFullYear()} 小康</Text>
 
         <Text>Made with ❤️ in Hong Kong</Text>
 

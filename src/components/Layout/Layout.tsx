@@ -1,14 +1,15 @@
 import { AppShell } from '@mantine/core'
+import { PropsWithChildren } from 'react'
 
 import { Footer } from '@/components/Layout/Footer'
 import { Header } from '@/components/Layout/Header'
 import { Navbar } from '@/components/Layout/Navbar'
+import { SEO } from '@/components/Layout/SEO'
 
-import { ChildrenType } from '@/types/types'
-
-export const Layout = (props: ChildrenType) => {
+export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
+      <SEO />
       <AppShell
         padding='md'
         navbar={<Navbar />}
@@ -29,7 +30,7 @@ export const Layout = (props: ChildrenType) => {
           },
         })}
       >
-        {props.children}
+        {children}
       </AppShell>
     </>
   )
