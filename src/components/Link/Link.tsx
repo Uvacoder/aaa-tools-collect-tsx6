@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import useStyles from '../../styles/Link.styles'
-
 import { Anchor, AnchorProps } from '@mantine/core'
 import { IconExternalLink } from '@tabler/icons'
 import Link from 'next/link'
 import React from 'react'
+
+import useStyles from '../../styles/Link.styles'
 
 type LinkProps = {
   noIcon?: boolean

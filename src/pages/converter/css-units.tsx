@@ -1,4 +1,4 @@
-import { Container, Group, NumberInput, Stack, Title } from '@mantine/core'
+import { Container, NumberInput, Stack, Title } from '@mantine/core'
 import React from 'react'
 
 import { useStyles } from '@/styles/css-units.styles'

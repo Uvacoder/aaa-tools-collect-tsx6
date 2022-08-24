@@ -7,7 +7,6 @@ import {
 import { useHotkeys, useLocalStorage } from '@mantine/hooks'
 import { SpotlightProvider } from '@mantine/spotlight'
 import { IconSearch } from '@tabler/icons'
-import { GetServerSidePropsContext } from 'next'
 import type { AppProps } from 'next/app'
 import React from 'react'
 

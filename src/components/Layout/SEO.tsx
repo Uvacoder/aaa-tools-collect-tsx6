@@ -1,5 +1,5 @@
-import { NextSeo, NextSeoProps } from 'next-seo'
 import { useRouter } from 'next/router'
+import { NextSeo, NextSeoProps } from 'next-seo'
 
 import { Favicons } from '@/components/Layout/Favicons'
 

@@ -1,11 +1,4 @@
-import {
-  Button,
-  Container,
-  createStyles,
-  Group,
-  Text,
-  Title,
-} from '@mantine/core'
+import { Button, Container, Group, Text, Title } from '@mantine/core'
 
 import Link from '@/components/Link'
 
