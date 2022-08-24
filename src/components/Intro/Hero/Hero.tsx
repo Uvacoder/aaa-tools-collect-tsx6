@@ -1,7 +1,8 @@
 import { Text, Title, useMantineTheme } from '@mantine/core'
 
 import { Dots } from '@/components/Intro/Hero/Dots'
-import { useStyles } from '@/components/Intro/Hero/Hero.styles'
+
+import { useStyles } from '@/styles/Hero.styles'
 
 export const Hero = () => {
   const { classes } = useStyles()

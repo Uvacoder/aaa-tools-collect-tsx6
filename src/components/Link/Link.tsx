@@ -1,14 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
-import { Anchor } from '@mantine/core'
+import useStyles from '../../styles/Link.styles'
+
+import { Anchor, AnchorProps } from '@mantine/core'
+import { IconExternalLink } from '@tabler/icons'
 import Link from 'next/link'
 import React from 'react'
 
-import { LinkProps } from '@/components/Link/types'
+type LinkProps = {
+  noIcon?: boolean
+}
 
-import useStyles from './Link.styles'
-import { IconExternalLink } from '@tabler/icons'
-
-const CustomLink = ({ href, children, noIcon = false, ...rest }: LinkProps) => {
+const CustomLink = ({
+  href,
+  children,
+  noIcon = false,
+  ...rest
+}: AnchorProps & React.AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps) => {
   const isInternalLink = href && href.startsWith('/')
   const isAnchorLink = href && href.startsWith('#')
   const { classes } = useStyles()

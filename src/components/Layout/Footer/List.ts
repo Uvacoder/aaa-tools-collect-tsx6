@@ -3,11 +3,15 @@ import {
   IconBrandInstagram,
   IconBrandTwitter,
   IconBrandYoutube,
+  TablerIcon,
 } from '@tabler/icons'
 
-import { ListType } from '@/components/Layout/Footer/types'
+type List = {
+  icon: TablerIcon
+  href: string
+}
 
-export const List: ListType[] = [
+export const List: List[] = [
   {
     icon: IconBrandTwitter,
     href: 'https://twitter.com/TszhongLai0411',

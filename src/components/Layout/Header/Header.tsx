@@ -11,10 +11,11 @@ import React from 'react'
 
 import { useNavbar } from '@/lib/store'
 
-import { useStyles } from '@/components/Layout/Header/Header.styles'
 import { Logo } from '@/components/Layout/Header/Logo'
 import { Search } from '@/components/Layout/Header/Search'
 import Link from '@/components/Link'
+
+import { useStyles } from '@/styles/Header.styles'
 
 export const Header = () => {
   const { opened, toggleOpened } = useNavbar()

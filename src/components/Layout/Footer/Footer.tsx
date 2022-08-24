@@ -1,9 +1,10 @@
 import { Group, Text, UnstyledButton } from '@mantine/core'
 import React from 'react'
 
-import { useStyles } from '@/components/Layout/Footer/Footer.styles'
 import { List } from '@/components/Layout/Footer/List'
 import Link from '@/components/Link'
+
+import { useStyles } from '@/styles/Footer.styles'
 
 export const Footer = () => {
   const { classes } = useStyles()

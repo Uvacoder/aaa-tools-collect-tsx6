@@ -1,9 +1,17 @@
 import { Text } from '@mantine/core'
 
-import { ListType } from '@/components/Intro/Features/types'
 import Link from '@/components/Link'
 
-export const List: ListType = {
+type List = {
+  supTitle: string
+  data: {
+    image: string
+    title: string
+    description: string | React.ReactNode
+  }[]
+}
+
+export const List: List = {
   supTitle: 'Features',
   data: [
     {

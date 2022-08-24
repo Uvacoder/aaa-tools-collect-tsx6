@@ -5,7 +5,8 @@ import { useNavbar } from '@/lib/store'
 
 import { LinksGroup } from '@/components/Layout/Navbar/Link/NavbarLink'
 import { List } from '@/components/Layout/Navbar/List'
-import { useStyles } from '@/components/Layout/Navbar/Navbar.styles'
+
+import { useStyles } from '@/styles/Navbar.styles'
 
 export const Navbar = () => {
   const { opened } = useNavbar()

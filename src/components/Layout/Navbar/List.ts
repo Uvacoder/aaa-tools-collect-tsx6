@@ -1,7 +1,7 @@
+import { IconArrowsExchange, IconCode } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
-import { LinksGroupProps } from '@/components/Layout/Navbar/types'
-import { IconArrowsExchange, IconCode } from '@tabler/icons'
+import { LinksGroupProps } from '@/components/Layout/Navbar/Link/NavbarLink'
 
 export const List: LinksGroupProps[] = [
   {

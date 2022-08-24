@@ -3,8 +3,9 @@ import React from 'react'
 
 import IMAGES from '@/lib/Icon'
 
-import { useStyles } from '@/components/Intro/Features/Features.styles'
 import { List } from '@/components/Intro/Features/List'
+
+import { useStyles } from '@/styles/Features.styles'
 
 export const Features = () => {
   const { classes } = useStyles()

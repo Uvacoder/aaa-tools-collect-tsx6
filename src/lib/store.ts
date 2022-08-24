@@ -1,6 +1,9 @@
 import create from 'zustand'
 
-import { storeType } from '@/types/types'
+type storeType = {
+  opened: boolean
+  toggleOpened: (bool?: boolean) => void
+}
 
 const store = create<storeType>((set) => ({
   opened: false,

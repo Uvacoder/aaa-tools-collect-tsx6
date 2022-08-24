@@ -1,6 +1,13 @@
-import { DotsProps } from '@/components/Intro/Hero/Dots/types'
+type DotsProps = {
+  size?: number
+  radius?: number
+}
 
-export const Dots = ({ size = 185, radius = 2.5, ...others }: DotsProps) => {
+export const Dots = ({
+  size = 185,
+  radius = 2.5,
+  ...others
+}: React.SVGAttributes<SVGElement> & DotsProps) => {
   return (
     <svg
       aria-hidden

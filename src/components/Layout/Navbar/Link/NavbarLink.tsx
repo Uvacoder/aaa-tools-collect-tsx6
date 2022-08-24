@@ -1,12 +1,24 @@
 import { Box, Collapse, Group, ThemeIcon, UnstyledButton } from '@mantine/core'
+import { IconChevronRight, TablerIcon } from '@tabler/icons'
 import React, { useState } from 'react'
 
 import { useNavbar } from '@/lib/store'
 
-import { useStyles } from '@/components/Layout/Navbar/Link/NavbarLink.style'
-import { LinksGroupProps } from '@/components/Layout/Navbar/types'
 import Link from '@/components/Link'
-import { IconChevronRight } from '@tabler/icons'
+
+import { useStyles } from '@/styles/NavbarLink.styles'
+
+export type LinksGroupProps = {
+  icon: TablerIcon
+  label: string
+  initiallyOpened?: boolean
+  links?: {
+    label: string
+    link: string
+    description: string
+    keywords?: string | string[]
+  }[]
+}
 
 export const LinksGroup = ({
   icon: Icon,

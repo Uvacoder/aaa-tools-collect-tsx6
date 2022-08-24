@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { useStyles } from '@/components/Layout/Header/Header.styles'
 import Link from '@/components/Link'
 import { Logo as MainLogo } from '@/components/Logo'
+
+import { useStyles } from '@/styles/Header.styles'
 
 export const Logo = ({ ...rest }: React.ComponentPropsWithRef<'a'>) => {
   const { classes } = useStyles()
