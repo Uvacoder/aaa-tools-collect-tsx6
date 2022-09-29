@@ -1,8 +1,10 @@
-import { IconBrandCodepen } from '@tabler/icons';
-import { IconBrandCodesandbox } from '@tabler/icons';
-import { IconBrandDribbble } from '@tabler/icons';
-import { IconBrandGithub } from '@tabler/icons';
-import { IconBrandPocket } from '@tabler/icons';
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandTwitter,
+  IconBrandYoutube,
+  TablerIcon,
+} from '@tabler/icons'
 
 type List = {
   icon: TablerIcon
@@ -12,26 +14,18 @@ type List = {
 export const List: List[] = [
   {
     icon: IconBrandTwitter,
-    href: 'https://twitter.com/VaLandscapes',
+    href: 'https://twitter.com/TszhongLai0411',
   },
   {
-    icon: IconBrandCodepen,
-    href: 'https://www.codepen.io/uvacoder/',
+    icon: IconBrandFacebook,
+    href: 'https://www.facebook.com/tszhonglai.0411/',
   },
   {
-    icon: IconBrandCodesandbox,
-    href: 'https://www.codesandbox.com/uvacoder/',
+    icon: IconBrandInstagram,
+    href: 'https://www.instagram.com/tszhong0411/',
   },
   {
-    icon: IconBrandGithub,
-    href: 'https://www.github.com/uvacoder/',
-  },
-  {
-    icon: IconBrandDribbble,
-    href: 'https://www.dribbble.com/uvacoder/',
-  },
-  {
-    icon: IconBrandPocket,
-    href: 'https://www.dribbble.com/uvacoder/',
+    icon: IconBrandYoutube,
+    href: 'https://www.youtube.com/channel/UC2hMWOaOlk9vrkvFVaGmn0Q',
   },
 ]
