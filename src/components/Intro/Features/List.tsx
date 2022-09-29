@@ -35,7 +35,7 @@ export const List: List = {
       description: (
         <Text>
           Our tools are open source on{' '}
-          <Link href='https://github.com/tszhong0411/tools.honghong.me' noIcon>
+          <Link href='https://github.com/uvacoder/abc-tools-hong' noIcon>
             GitHub
           </Link>
           .
