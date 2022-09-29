@@ -55,7 +55,7 @@ export const Header = () => {
               className={classes.button}
               component={Link}
               noIcon
-              href='https://github.com/tszhong0411/tools.honghong.me'
+              href='https://github.com/uvacoder/abc-tools-hong'
             >
               <IconBrandGithub size={18} />
             </Button>
