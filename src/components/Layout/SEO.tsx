@@ -8,8 +8,8 @@ export const SEO = (props: NextSeoProps) => {
 
   return (
     <NextSeo
-      titleTemplate='%s | 小康 Tools'
-      defaultTitle='小康 – Developer, YouTuber'
+      titleTemplate='Tools'
+      defaultTitle='Developer, YouTuber'
       description='Some tools for web developer'
       canonical={`https://tools.honghong.me${router.asPath}`}
       twitter={{
