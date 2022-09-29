@@ -14,7 +14,7 @@ export const Footer = () => {
       <div className={classes.inner}>
         <Text>&copy; {new Date().getFullYear()} 小康</Text>
 
-        <Text>Made with ❤️ in Hong Kong</Text>
+        <Text>Made with ❤️ in Virginia</Text>
 
         <Group spacing={8} position='right' noWrap>
           {List.map((item, index) => (
