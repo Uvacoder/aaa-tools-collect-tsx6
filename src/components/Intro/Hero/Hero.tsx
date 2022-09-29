@@ -20,13 +20,12 @@ export const Hero = () => {
           Some tools for web developers made by
           <Text component='span' color={theme.primaryColor} inherit>
             {' '}
-            小康
+            uvacoder
           </Text>
         </Title>
 
         <Text size='lg' color='dimmed' className={classes.description}>
-          You can find helpful tools for developers here, I hope it can save
-          your time. And build your dream project.
+          Just a start at curating some webdev tools for programmers.
         </Text>
       </div>
     </div>
